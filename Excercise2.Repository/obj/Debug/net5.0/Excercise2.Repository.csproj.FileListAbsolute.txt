@@ -1,0 +1,11 @@
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\obj\Debug\net5.0\Excercise2.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\obj\Debug\net5.0\Excercise2.Repository.AssemblyInfoInputs.cache
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\obj\Debug\net5.0\Excercise2.Repository.AssemblyInfo.cs
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\obj\Debug\net5.0\Excercise2.Repository.csproj.CoreCompileInputs.cache
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\bin\Debug\net5.0\Excercise2.Repository.deps.json
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\bin\Debug\net5.0\Excercise2.Repository.dll
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\bin\Debug\net5.0\ref\Excercise2.Repository.dll
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\bin\Debug\net5.0\Excercise2.Repository.pdb
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\obj\Debug\net5.0\Excercise2.Repository.dll
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\obj\Debug\net5.0\ref\Excercise2.Repository.dll
+C:\Saran\Excercise2\Excercise2\Excercise2.Repository\obj\Debug\net5.0\Excercise2.Repository.pdb
