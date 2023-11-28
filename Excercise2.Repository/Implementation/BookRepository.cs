@@ -1,9 +1,9 @@
 ﻿using Excercise2.Repository;
 using Excercise2.Repository.EntityClass;
-using Excercise2.Repository.GenericRepository;
 using Excercise2.Repository.Interface;
 using Excercise2.Repository.Model;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -18,12 +18,12 @@ namespace Repository.Implementation
 {
     public class BookRepository : IBookRepository
     {
-        private readonly IUnitOfWork<BookDBContext> _context;
+        private readonly BookDBContext _dbCon;
         private readonly IConfiguration configuration;
-        public BookRepository(IUnitOfWork<BookDBContext> context, IConfiguration configuration)
+        public BookRepository(IConfiguration configuration, BookDBContext dbCon)
         {
-            _context = context;
             this.configuration = configuration;
+            _dbCon = dbCon;
         }
         //PLFT - Punlisher,AuthorLastName,AuthorFirstName,Title
         public async Task<List<BookModel>> getBooksByPLFT()
@@ -31,7 +31,8 @@ namespace Repository.Implementation
             List<BookModel> bookModel = new List<BookModel>();
             try
             {
-                bookModel = (from echBok in await _context.GetRepository<Book>().GetListasync()
+                var books = await _dbCon.Book.ToListAsync();
+                bookModel = (from echBok in books
                              orderby echBok.Publisher, echBok.AuthorLastName, echBok.AuthorFirstName, echBok.Title
                              select new BookModel
                              {
@@ -100,8 +101,8 @@ namespace Repository.Implementation
                     List<Book> newBooks = JsonConvert.DeserializeObject<List<Book>>(jsonStringModel);
                     if (newBooks.Count > 0)
                     {
-                        var ResponseNew = await _context.GetRepository<Book>().InsertMultiple(newBooks);
-                        _context.SaveChanges();
+                        await _dbCon.Book.AddRangeAsync(newBooks);
+                        _dbCon.SaveChanges();
                     }
                     response = "No of Records Inserted is " + newBooks.Count;
                 }

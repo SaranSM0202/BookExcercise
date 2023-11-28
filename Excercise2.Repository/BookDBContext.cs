@@ -26,7 +26,6 @@ namespace Excercise2.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.ApplyConfiguration<Book>(new BookMAP());
         }
     }

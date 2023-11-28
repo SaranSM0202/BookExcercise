@@ -1,5 +1,4 @@
 using Excercise2.Repository;
-using Excercise2.Repository.GenericRepository;
 using Excercise2.Repository.Interface;
 using Excercise2.Repository.Model;
 using Microsoft.AspNetCore.Builder;
@@ -41,7 +40,6 @@ namespace Excercise2
             services.AddDbContext<BookDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("BookConnection")));
 
-            services.AddScoped<IUnitOfWork<BookDBContext>, Unitofwork<BookDBContext>>();
             services.AddScoped<IBookRepository, BookRepository>();
         }
 
